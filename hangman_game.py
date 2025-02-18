@@ -1,3 +1,5 @@
+import random
+
 # Lista com os estágios da forca
 forca_estagios = [
     """
@@ -58,8 +60,6 @@ forca_estagios = [
     """
 ]
 
-import random
-
 # Lista de palavras
 palavras = ["python", "desenvolvimento", "computador", "programacao", "teclado"]
 
@@ -79,6 +79,7 @@ while tentativas_restantes > 0 and "_" in palavra_oculta:
 
     tentativa = input("Digite uma letra: ").lower()
 
+    # Veirfica se a letra tem na palavra oculta
     if tentativa in palavra_escolhida:
         # Atualiza a palavra oculta com a letra correta
         for i, letra in enumerate(palavra_escolhida):
@@ -89,7 +90,7 @@ while tentativas_restantes > 0 and "_" in palavra_oculta:
             letras_erradas.append(tentativa)
             tentativas_restantes -= 1
 
-    print("\n" + "=" * 30 + "\n")  # Separador visual
+    print("\n" + "=" * 50 + "\n")  # Separador visual
 
 # Resultado final
 if "_" not in palavra_oculta:
