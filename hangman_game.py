@@ -60,16 +60,35 @@ forca_estagios = [
     """
 ]
 
-# Lista de palavras
-palavras = ["python", "desenvolvimento", "computador", "programacao", "teclado"]
+# Dicionário de temas com listas de palavras
+temas = {
+    "frutas": ["banana", "siriguela", "jabuticaba", "melancia", "morango"],
+    "animais": ["ornitorrinco", "golfinho", "gato", "tamandua", "girafa"],
+    "países": ["brasil", "canada", "tajiquistao", "mexico", "singapura"],
+    "computação": ["python", "desenvolvimento", "computador", "programacao", "teclado"]
+}
 
-# Escolhe uma palavra aleatória
-palavra_escolhida = random.choice(palavras).lower()
+# Função para escolher uma palavra aleatória de um tema
+def escolher_palavra(tema):
+    return random.choice(temas[tema])
+
+print("🎯 Bem-vindo ao Jogo da Forca! 🎯\n")
+
+# Exibir temas disponíveis
+print("Escolha um tema:")
+for i, tema in enumerate(temas.keys(), 1):
+    print(f"{i}. {tema.capitalize()}")
+
+# Solicitar escolha do tema
+escolha = int(input("Digite o número do tema: ")) - 1
+tema_escolhido = list(temas.keys())[escolha]
+
+# Escolher uma palavra aleatória do tema selecionado
+palavra_escolhida = escolher_palavra(tema_escolhido).lower()
 palavra_oculta = ["_"] * len(palavra_escolhida)
 letras_erradas = []
 tentativas_restantes = len(forca_estagios) - 1  # Número de chances
 
-print("🎯 Bem-vindo ao Jogo da Forca!\n")
 
 while tentativas_restantes > 0 and "_" in palavra_oculta:
     print(forca_estagios[len(forca_estagios) - 1 - tentativas_restantes])  # Exibe o estágio atual da forca
