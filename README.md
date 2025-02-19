@@ -7,7 +7,7 @@ Projeto feito em python, com o proposito de ser um jogo da forca classico; cont√
 
 
 <h3>Membros da Equipe:</h3>
-<li>Maida Martinsli>
+<li>Maida Martins</li>
 <li>Nyvea Soeiro</li>
 <li>Gustavo Rodrigues</li>
 <li>Maria Vit√≥ria de Almeida Ferreira</li>
